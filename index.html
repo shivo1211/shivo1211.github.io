@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Shivam Suresh Gupta - Full-Stack Developer, Data Enthusiast, Engineering Graduate. View my portfolio, skills, certifications, and projects.">
+    <meta name="author" content="Shivam Suresh Gupta">
+    <meta name="keywords" content="Shivam Gupta, Full Stack Developer, Web Developer, React, Java, Python, Portfolio">
     <title>Shivam Suresh Gupta | Full-Stack Developer</title>
+    <link rel="icon" type="image/png" href="shiv-favicon.png">
+    <link rel="apple-touch-icon" href="shiv-favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -109,26 +115,16 @@
             z-index: 1;
         }
 
-        .wave-emoji {
-            font-size: 4rem;
-            animation: wave 2s ease-in-out infinite;
-            display: inline-block;
-        }
-
-        @keyframes wave {
-
-            0%,
-            100% {
-                transform: rotate(0deg);
-            }
-
-            25% {
-                transform: rotate(20deg);
-            }
-
-            75% {
-                transform: rotate(-10deg);
-            }
+        .hero-logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background: linear-gradient(var(--dark), var(--dark)) padding-box,
+                var(--gradient) border-box;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+            margin-bottom: 20px;
         }
 
         .hero h1 {
@@ -823,19 +819,28 @@
                 padding: 8px 0;
             }
 
-            .top-bar-name {
+            .top-bar-brand {
                 display: none;
             }
 
+            .top-bar.scrolled .top-bar-brand {
+                display: flex;
+                gap: 8px;
+            }
+
+            .top-bar.scrolled .top-bar-logo {
+                width: 26px;
+                height: 26px;
+            }
+
             .top-bar.scrolled .top-bar-name {
-                display: block;
                 font-size: 0.8rem;
             }
 
             .top-bar.scrolled .top-bar-content {
                 flex-direction: row;
                 justify-content: space-between;
-                gap: 10px;
+                gap: 8px;
             }
         }
 
@@ -894,25 +899,45 @@
             content: '↓ ';
         }
 
-        .top-bar-name {
+        .top-bar-brand {
+            display: none;
+            align-items: center;
+            gap: 10px;
             opacity: 0;
             transform: translateY(15px) scale(0.9);
             filter: blur(4px);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: none;
+            position: absolute;
+        }
+
+        .top-bar.scrolled .top-bar-brand {
+            display: flex;
+            position: relative;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+            pointer-events: auto;
+        }
+
+        .top-bar-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid transparent;
+            background: linear-gradient(var(--dark), var(--dark)) padding-box,
+                var(--gradient) border-box;
+            box-shadow: 0 2px 10px rgba(99, 102, 241, 0.3);
+        }
+
+        .top-bar-name {
             font-weight: 700;
             font-size: 1.1rem;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            pointer-events: none;
-        }
-
-        .top-bar.scrolled .top-bar-name {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            filter: blur(0);
-            pointer-events: auto;
         }
 
         .top-bar.scrolled .top-bar-content {
@@ -992,7 +1017,10 @@
                 <span class="top-bar-text">📄 Looking for my resume?</span>
                 <span class="scroll-hint">Scroll down for more information</span>
             </div>
-            <span class="top-bar-name">Shivam Suresh Gupta</span>
+            <div class="top-bar-brand">
+                <img src="shiv-favicon.png" alt="Logo" class="top-bar-logo">
+                <span class="top-bar-name">Shivam Suresh Gupta</span>
+            </div>
             <a href="https://tinyurl.com/shivam-resume-updated" target="_blank" class="download-btn">
                 <i class="fas fa-download"></i>
                 Download CV
@@ -1003,7 +1031,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="wave-emoji">👋</span>
+            <img src="shivo-logo.jpg" alt="Shivam Gupta" class="hero-logo">
             <h1>Shivam Suresh Gupta</h1>
             <p class="tagline">Engineering Graduate | <span>Full-Stack Developer</span> | Data Enthusiast</p>
 
@@ -1240,12 +1268,6 @@
                     <div class="project-icon"><i class="fas fa-brain"></i></div>
                     <h3>Face Frontalization AI</h3>
                     <p>GAN-based model for frontal face generation and enhancement using deep learning techniques.</p>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-car"></i></div>
-                    <h3>Smart Car (STM32)</h3>
-                    <p>Bluetooth-controlled car with obstacle detection using sensors and STM32 microcontroller.</p>
                 </div>
 
                 <div class="project-card">
