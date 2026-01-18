@@ -1344,10 +1344,11 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.skill-card, .cert-card, .project-card, .timeline-item, .extras-card').forEach((el, index) => {
+        // Animate cards (excluding timeline for immediate visibility)
+        document.querySelectorAll('.skill-card, .cert-card, .project-card, .extras-card').forEach((el, index) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
-            el.style.transition = `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
+            el.style.transition = `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${(index % 4) * 0.08}s`;
             observer.observe(el);
         });
 
