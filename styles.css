@@ -89,7 +89,8 @@ body {
     text-align: center;
     padding: 100px 20px;
     position: relative;
-    padding-top: 140px; /* Adjusted for fixed top bar */
+    padding-top: 140px;
+    /* Adjusted for fixed top bar */
 }
 
 .hero-content {
@@ -173,6 +174,53 @@ body {
 
 .contact-link:hover i {
     transform: scale(1.15);
+}
+
+/* Phone + WhatsApp Split Button */
+.phone-whatsapp-split {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.phone-whatsapp-split .split-phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    color: var(--light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.phone-whatsapp-split .split-phone:hover {
+    color: var(--white);
+}
+
+.phone-whatsapp-split .split-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 16px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    color: #25D366;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.phone-whatsapp-split .split-whatsapp:hover {
+    color: #2EE67A;
+    transform: scale(1.1);
+}
+
+.phone-whatsapp-split:hover {
+    background: var(--gradient);
+    border-color: transparent;
 }
 
 /* Scroll Indicator */
