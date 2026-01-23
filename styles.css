@@ -10,6 +10,30 @@
     --white: #ffffff;
     --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+    --card-bg: var(--dark-light);
+    --card-border: rgba(255, 255, 255, 0.05);
+    --text-main: var(--light);
+    --text-muted: var(--gray);
+    --nav-bg: rgba(15, 23, 42, 0.98);
+    --element-bg: rgba(30, 41, 59, 0.8);
+    --border-light: rgba(255, 255, 255, 0.08);
+    /* For contact links etc */
+    --divider: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] {
+    --dark: #f8fafc;
+    --dark-light: #ffffff;
+    --light: #1e293b;
+    --gray: #475569;
+    --card-bg: #ffffff;
+    --card-border: rgba(99, 102, 241, 0.1);
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --element-bg: rgba(255, 255, 255, 0.8);
+    --border-light: rgba(99, 102, 241, 0.15);
+    --divider: rgba(99, 102, 241, 0.15);
 }
 
 * {
@@ -26,7 +50,7 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     background: var(--dark);
-    color: var(--light);
+    color: var(--text-main);
     line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -124,7 +148,7 @@ body {
 
 .hero .tagline {
     font-size: 1.35rem;
-    color: var(--gray);
+    color: var(--text-muted);
     margin-bottom: 45px;
     font-weight: 400;
     letter-spacing: 0.3px;
@@ -149,10 +173,10 @@ body {
     align-items: center;
     gap: 10px;
     padding: 14px 28px;
-    background: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--element-bg);
+    border: 1px solid var(--border-light);
     border-radius: 50px;
-    color: var(--light);
+    color: var(--text-main);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -190,7 +214,7 @@ body {
     align-items: center;
     gap: 10px;
     padding: 14px 20px;
-    color: var(--light);
+    color: var(--text-main);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -206,7 +230,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 14px 16px;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid var(--divider);
     color: #25D366;
     text-decoration: none;
     font-size: 1.2rem;
@@ -234,7 +258,7 @@ body {
 
 .scroll-indicator i {
     font-size: 1.5rem;
-    color: var(--gray);
+    color: var(--text-muted);
 }
 
 @keyframes bounce {
@@ -290,7 +314,7 @@ section {
 }
 
 .section-header p {
-    color: var(--gray);
+    color: var(--text-muted);
     font-size: 1.1rem;
     margin-top: 8px;
 }
@@ -303,8 +327,8 @@ section {
 }
 
 .skill-card {
-    background: var(--dark-light);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 20px;
     padding: 35px;
     transition: all 0.4s ease;
@@ -366,7 +390,7 @@ section {
     border-radius: 10px;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--light);
+    color: var(--text-main);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
 }
@@ -386,8 +410,8 @@ section {
 }
 
 .cert-card {
-    background: linear-gradient(135deg, var(--dark-light) 0%, rgba(99, 102, 241, 0.05) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(99, 102, 241, 0.05) 100%);
+    border: 1px solid var(--card-border);
     border-radius: 16px;
     padding: 25px;
     display: flex;
@@ -438,7 +462,7 @@ section {
     background: rgba(99, 102, 241, 0.15);
     border: 1px solid rgba(99, 102, 241, 0.25);
     border-radius: 20px;
-    color: var(--light);
+    color: var(--text-main);
     text-decoration: none;
     font-size: 0.75rem;
     font-weight: 500;
@@ -486,7 +510,7 @@ section {
     background: transparent;
     border: 2px solid var(--primary);
     border-radius: 50px;
-    color: var(--light);
+    color: var(--text-main);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
@@ -519,8 +543,8 @@ section {
 }
 
 .project-card {
-    background: var(--dark-light);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 24px;
     padding: 35px;
     transition: all 0.4s ease;
@@ -583,7 +607,7 @@ section {
 }
 
 .project-card p {
-    color: var(--gray);
+    color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 15px;
 }
@@ -596,7 +620,7 @@ section {
     background: rgba(99, 102, 241, 0.15);
     border: 1px solid rgba(99, 102, 241, 0.3);
     border-radius: 25px;
-    color: var(--light);
+    color: var(--text-main);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
@@ -662,8 +686,8 @@ section {
 }
 
 .timeline-content {
-    background: var(--dark-light);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 16px;
     padding: 25px;
     transition: all 0.3s ease;
@@ -687,7 +711,7 @@ section {
 }
 
 .timeline-content p {
-    color: var(--gray);
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 
@@ -699,8 +723,8 @@ section {
 }
 
 .extras-card {
-    background: var(--dark-light);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 24px;
     padding: 35px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -733,7 +757,7 @@ section {
     align-items: flex-start;
     gap: 12px;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--divider);
 }
 
 .extras-list li:last-child {
@@ -786,7 +810,7 @@ footer {
 }
 
 footer p {
-    color: var(--gray);
+    color: var(--text-muted);
     font-size: 0.95rem;
     letter-spacing: 0.3px;
 }
@@ -917,6 +941,16 @@ footer .heart {
         justify-content: space-between;
         gap: 8px;
     }
+
+    .theme-btn {
+        position: static;
+        transform: none;
+        margin-top: 5px;
+    }
+
+    .theme-btn:hover {
+        transform: rotate(15deg);
+    }
 }
 
 /* Top Download Bar */
@@ -925,7 +959,7 @@ footer .heart {
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(180deg, var(--dark) 0%, rgba(15, 23, 42, 0.98) 100%);
+    background: linear-gradient(180deg, var(--dark) 0%, var(--nav-bg) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(99, 102, 241, 0.15);
@@ -938,6 +972,8 @@ footer .heart {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    position: relative;
+    /* For absolute positioning of children */
 }
 
 .top-bar-left {
@@ -960,12 +996,12 @@ footer .heart {
 }
 
 .top-bar-text {
-    color: var(--light);
+    color: var(--text-main);
     font-size: 0.95rem;
 }
 
 .scroll-hint {
-    color: var(--gray);
+    color: var(--text-muted);
     font-size: 0.75rem;
     opacity: 0.8;
 }
@@ -1043,15 +1079,53 @@ footer .heart {
     box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
 }
 
+.theme-btn {
+    background: transparent;
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+
+    /* Absolute View Positioning */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.theme-btn:hover {
+    background: var(--gradient);
+    border-color: transparent;
+    color: var(--white);
+    transform: translateY(-50%) rotate(15deg);
+    /* Combine transforms */
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+}
+
+[data-theme="light"] .theme-btn {
+    border-color: rgba(99, 102, 241, 0.2);
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary);
+}
+
+[data-theme="light"] .theme-btn:hover {
+    background: var(--gradient);
+    color: var(--white);
+}
+
 .download-btn:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
 }
 
-.download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
-}
+
 
 .download-btn i {
     animation: bounce-down 2s infinite;
